@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alumni SUISS Association</title>
+
+<style>
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: #f5efe6;
+    color: #2f241f;
+}
+
+/* TOP BANNER */
+.top-banner {
+    background-color: #0b1f3a;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 42px;
+}
+
+.patronage-logos {
+    display: flex;
+    gap: 18px;
+}
+
+.patronage-logos img {
+    height: 34px;
+    background: white;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.top-actions {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.join-button {
+    color: white;
+    border: 1px solid white;
+    padding: 7px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.join-button:hover {
+    background: white;
+    color: #0b1f3a;
+}
+
+.language-select {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+/* MENU */
+.sticky-menu {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #0b1f3a;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 15px;
+}
+
+.sticky-menu a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.sticky-menu a:hover {
+    color: #d4af37;
+}
+
+/* HERO */
+.hero {
+    min-height: 650px;
+    background:
+        linear-gradient(rgba(245,239,230,0.2), rgba(245,239,230,0.2)),
+        url("hero.jpg");
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    background: rgba(245,239,230,0.7);
+    padding: 40px 70px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 52px;
+    letter-spacing: 12px;
+    font-family: Arial;
+}
+
+.hero h2 {
+    font-size: 46px;
+    margin: 10px 0 30px;
+}
+
+.learn-button {
+    background: white;
+    padding: 12px 36px;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* SECTIONS */
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 40px;
+}
+
+section h2 {
+    font-size: 42px;
+    color: #6b3f2d;
+}
+
+section p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    margin-top: 20px;
+    border-left: 5px solid #d4af37;
+}
+
+/* DONATION */
+.donate-section {
+    background-color: #0b1f3a;
+    color: white;
+    text-align: center;
+    max-width: none;
+}
+
+.donate-section h2 {
+    color: #d4af37;
+}
+
+.donate-button {
+    background: #d4af37;
+    color: #0b1f3a;
+    padding: 14px 34px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* CONTACTS */
+.contacts-section {
+    background-color: #f5efe6;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 60px;
+}
+
+.contact-box {
+    border: 1px solid #0b1f3a;
+    padding: 25px;
+}
+
+.contact-box h3 {
+    color: #0b1f3a;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 30px;
+}
+
+.tag-button {
+    border: 1px solid #0b1f3a;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* FOOTER */
+footer {
+    background: #061226;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP -->
+<div class="top-banner">
+    <div class="patronage-logos">
+        <img src="logo-unito.png">
+        <img src="logo-suiss.png">
+        <img src="logo-sue.png">
+    </div>
+
+    <div class="top-actions">
+        <a href="#ammissione" class="join-button">Join us</a>
+
+        <select class="language-select" onchange="changeLanguage(this)">
+            <option value="index.html">IT</option>
+            <option value="en.html" selected>EN</option>
+        </select>
+    </div>
+</div>
+
+<!-- MENU -->
+<nav class="sticky-menu">
+    <a href="#chi-siamo">About</a>
+    <a href="#news-eventi">News & Events</a>
+    <a href="#community">Community</a>
+    <a href="#dona-ora">Donate</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-content">
+        <h1>ASSOCIATION</h1>
+        <h2>ALUMNI SUISS</h2>
+        <a href="#chi-siamo" class="learn-button">Learn more</a>
+    </div>
+</header>
+
+<!-- ABOUT -->
+<section id="chi-siamo">
+    <h2>About</h2>
+    <p>
+        The Alumni SUISS Association brings together alumni, students, faculty and supporters
+        of the Interdepartmental University School of Strategic Sciences.
+    </p>
+</section>
+
+<!-- EVENTS -->
+<section id="news-eventi">
+    <h2>News & Events</h2>
+    <p>Upcoming conferences, meetings and official initiatives.</p>
+</section>
+
+<!-- COMMUNITY -->
+<section id="community">
+    <h2>Community</h2>
+    <p>
+        A professional network fostering collaboration, exchange of knowledge
+        and institutional engagement.
+    </p>
+</section>
+
+<!-- JOIN -->
+<section id="ammissione">
+    <h2>Join the Association</h2>
+    <p>Membership is subject to evaluation according to the Statute.</p>
+</section>
+
+<!-- DONATE -->
+<section id="dona-ora" class="donate-section">
+    <h2>Donate</h2>
+    <p>Support our initiatives.</p>
+    <a href="#" class="donate-button">Donate</a>
+</section>
+
+<!-- CONTACTS -->
+<section class="contacts-section">
+    <div class="contact-box">
+        <h3>Contacts</h3>
+        <p>Via dell’Arsenale 22<br>Turin, Italy</p>
+        <p>+39 3274331196</p>
+        <p>segreteria@alumnisuiss.it</p>
+    </div>
+
+    <div class="contact-box">
+        <h3>Donate</h3>
+        <p>IBAN details</p>
+    </div>
+
+    <div class="contact-box">
+        <h3>Get Social</h3>
+        <div class="social-icons">
+            <span>f</span>
+            <span>𝕏</span>
+        </div>
+        <a href="#" class="tag-button">Tag us in your photos!</a>
+    </div>
+</section>
+
+<footer>
+© 2026 Alumni SUISS Association
+</footer>
+
+<script>
+function changeLanguage(select) {
+    window.location.href = select.value;
+}
+</script>
+
+</body>
+</html>
