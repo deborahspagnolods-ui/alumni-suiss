@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ricerca Soci - Alumni SUISS</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: #f5efe6;
+    color: #2f241f;
+}
+
+header {
+    background-color: #0b1f3a;
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+header h1 {
+    color: #d4af37;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 30px;
+}
+
+.search-box {
+    background: white;
+    padding: 28px;
+    border-left: 5px solid #d4af37;
+    margin-bottom: 35px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #0b1f3a;
+    background-color: #f5efe6;
+    font-size: 16px;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.member {
+    background: white;
+    padding: 24px;
+    border: 1px solid #0b1f3a;
+    text-align: center;
+}
+
+.member img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #ddd;
+}
+
+.member h3 {
+    color: #0b1f3a;
+}
+
+.member p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 35px;
+    color: #0b1f3a;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .members-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Ricerca Soci</h1>
+    <p>Community Alumni SUISS</p>
+</header>
+
+<div class="container">
+
+    <div class="search-box">
+        <h2>Cerca nella Community</h2>
+        <p>
+            Questa sezione raccoglie, su base volontaria, foto e bio dei soci che desiderano
+            rendere visibile il proprio profilo all’interno della Community Alumni SUISS.
+        </p>
+
+        <input type="text" id="searchInput" onkeyup="searchMembers()" placeholder="Cerca per nome, qualifica, settore...">
+    </div>
+
+    <div class="members-grid" id="membersGrid">
+
+        <div class="member">
+            <img src="socio-1.jpg" alt="Socio">
+            <h3>Nome Cognome</h3>
+            <p><strong>Alumni Ordinario</strong></p>
+            <p>Breve bio del socio, percorso formativo, ambito professionale e interessi.</p>
+        </div>
+
+        <div class="member">
+            <img src="socio-2.jpg" alt="Socio">
+            <h3>Nome Cognome</h3>
+            <p><strong>Socio Studente</strong></p>
+            <p>Breve bio del socio, corso frequentato e interessi professionali.</p>
+        </div>
+
+        <div class="member">
+            <img src="socio-3.jpg" alt="Socio">
+            <h3>Nome Cognome</h3>
+            <p><strong>Socio Docente</strong></p>
+            <p>Breve bio del socio, area disciplinare e attività svolte.</p>
+        </div>
+
+    </div>
+
+    <a href="index.html#community" class="back-link">← Torna alla Community</a>
+
+</div>
+
+<script>
+function searchMembers() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const members = document.querySelectorAll(".member");
+
+    members.forEach(member => {
+        const text = member.innerText.toLowerCase();
+        member.style.display = text.includes(input) ? "block" : "none";
+    });
+}
+</script>
+
+</body>
+</html>
