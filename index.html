@@ -419,6 +419,28 @@ footer {
         text-align: center;
     }
 }
+    
+/* SOCIAL ICONS (BOX CONTATTI) */
+.social-icons {
+    display: flex;
+    gap: 18px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.social-icons a {
+    color: #0b1f3a;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #d4af37;
+    transform: scale(1.1);
+}
 </style>
 </head>
 
@@ -546,9 +568,34 @@ footer {
     </div>
 
     <div class="contact-box">
-        <h3>Get Social</h3>
-        <p>Seguici sui nostri canali social ufficiali.</p>
-    </div>
+    <h3>Get Social</h3>
+    <p>Seguici sui nostri canali social ufficiali.</p>
+
+    <div class="social-icons">
+    <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6-1a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+        </svg>
+    </a>
+
+    <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M4 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0 5h4v13H4V8zm7 0h4v2h.1c.6-1.1 2-2.3 4.1-2.3 4.4 0 5.2 2.9 5.2 6.6V21h-4v-6.3c0-1.5 0-3.5-2.2-3.5s-2.5 1.7-2.5 3.4V21h-4V8z"/>
+        </svg>
+    </a>
+
+    <a href="https://x.com/" target="_blank" aria-label="X">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.9 2H22l-7.5 8.6L23 22h-6.8l-5.3-7-6.1 7H2l8-9.2L1 2h6.8l4.8 6.4L18.9 2z"/>
+        </svg>
+    </a>
+
+    <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13 3h4V0h-4c-3.3 0-6 2.7-6 6v3H4v4h3v11h4V13h3l1-4h-4V6c0-1.1.9-2 2-2z"/>
+        </svg>
+    </a>
+</div>
 </section>
 
 <section id="trasparenza" class="transparency-section">
