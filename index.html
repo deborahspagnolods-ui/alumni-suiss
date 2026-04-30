@@ -101,7 +101,7 @@ body {
     border-color: #d4af37;
 }
 
-/* MENU STICKY */
+/* MENU */
 .sticky-menu {
     position: sticky;
     top: 0;
@@ -109,7 +109,7 @@ body {
     background-color: #0b1f3a;
     display: flex;
     justify-content: center;
-    gap: 54px;
+    gap: 42px;
     padding: 16px 20px;
     border-top: 1px solid rgba(255,255,255,0.2);
     border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -130,11 +130,12 @@ body {
 /* HERO */
 .hero {
     min-height: 650px;
-    background:
+    background-image:
         linear-gradient(rgba(245,239,230,0.20), rgba(245,239,230,0.20)),
         url("hero.jpg");
     background-size: cover;
-    background-position: center 75%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -200,6 +201,23 @@ section p {
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
+/* BOTTONI */
+.primary-button {
+    display: inline-block;
+    margin-top: 24px;
+    background-color: #0b1f3a;
+    color: white;
+    padding: 14px 34px;
+    text-decoration: none;
+    border-radius: 24px;
+    font-weight: bold;
+}
+
+.primary-button:hover {
+    background-color: #d4af37;
+    color: #0b1f3a;
+}
+
 /* DONA ORA */
 .donate-section {
     background-color: #0b1f3a;
@@ -252,39 +270,89 @@ section p {
     line-height: 1.6;
 }
 
-.social-icons {
-    display: flex;
-    gap: 16px;
-    margin: 12px 0 35px;
+/* AMMINISTRAZIONE TRASPARENTE */
+.transparency-section {
+    max-width: none;
+    background-color: #ffffff;
+    padding: 80px 40px;
+    text-align: center;
 }
 
-.social-icons a {
+.transparency-section h2 {
     color: #0b1f3a;
-    font-family: Arial, sans-serif;
-    font-size: 32px;
-    font-weight: bold;
-    text-decoration: none;
+    font-size: 42px;
+    margin-bottom: 10px;
 }
 
-.tag-button {
-    display: inline-block;
+.transparency-section p {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 18px;
+}
+
+.docs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.doc-card {
     border: 1px solid #0b1f3a;
+    padding: 25px;
+    background-color: #f5efe6;
+}
+
+.doc-card h3 {
     color: #0b1f3a;
-    padding: 12px 28px;
-    border-radius: 24px;
+}
+
+.doc-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #0b1f3a;
+    color: white;
     text-decoration: none;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 14px;
+    border-radius: 20px;
+}
+
+.doc-button:hover {
+    background-color: #d4af37;
+    color: #0b1f3a;
 }
 
 /* FOOTER */
 footer {
     background-color: #061226;
     color: white;
-    text-align: center;
     padding: 25px;
     font-size: 14px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.footer-social {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.footer-social a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.footer-social a:hover {
+    color: #d4af37;
 }
 
 /* RESPONSIVE */
@@ -340,6 +408,16 @@ footer {
         gap: 24px;
         padding: 40px 24px;
     }
+
+    .docs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
 }
 </style>
 </head>
@@ -372,6 +450,7 @@ footer {
     <a href="#news-eventi">News ed eventi</a>
     <a href="#community">Community</a>
     <a href="#dona-ora">Dona ora</a>
+    <a href="#trasparenza">Trasparenza</a>
 </nav>
 
 <header class="hero">
@@ -430,8 +509,8 @@ footer {
 
     <div class="card">
         <p>
-            Per richiedere l’ammissione all’Associazione sarà necessario compilare il modulo di adesione
-            e attendere la valutazione dei requisiti secondo quanto previsto dallo Statuto.
+            Per richiedere l’ammissione all’Associazione è necessario accedere al portale dedicato,
+            compilare la domanda e caricare la documentazione richiesta in base alla tipologia di socio.
         </p>
 
         <p>
@@ -439,8 +518,8 @@ footer {
             previste dallo Statuto dell’Associazione.
         </p>
     </div>
-    
-    <a href="ammissione.html" class="donate-button">
+
+    <a href="ammissione.html" class="primary-button">
         Accedi al portale iscrizioni
     </a>
 </section>
@@ -468,16 +547,39 @@ footer {
 
     <div class="contact-box">
         <h3>Get Social</h3>
-        <div class="social-icons">
-            <a href="#">f</a>
-            <a href="#">𝕏</a>
+        <p>Seguici sui nostri canali social ufficiali.</p>
+    </div>
+</section>
+
+<section id="trasparenza" class="transparency-section">
+    <h2>Amministrazione trasparente</h2>
+
+    <p>
+        In questa sezione sono pubblicati i documenti ufficiali dell’Associazione Alumni SUISS.
+    </p>
+
+    <div class="docs-grid">
+        <div class="doc-card">
+            <h3>Statuto</h3>
+            <p>Statuto ufficiale dell’Associazione Alumni SUISS.</p>
+            <a href="statuto.pdf" target="_blank" class="doc-button">
+                Visualizza documento
+            </a>
         </div>
-        <a href="#" class="tag-button">Tag us in your photos!</a>
     </div>
 </section>
 
 <footer>
-    © 2026 Associazione Alumni SUISS - Tutti i diritti riservati
+    <div class="footer-content">
+        <p>© 2026 Associazione Alumni SUISS - Tutti i diritti riservati</p>
+
+        <div class="footer-social">
+            <a href="#" target="_blank" aria-label="Instagram">◎</a>
+            <a href="#" target="_blank" aria-label="LinkedIn">in</a>
+            <a href="#" target="_blank" aria-label="X">𝕏</a>
+            <a href="#" target="_blank" aria-label="Facebook">f</a>
+        </div>
+    </div>
 </footer>
 
 </body>
