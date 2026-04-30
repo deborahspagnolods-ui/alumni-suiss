@@ -66,15 +66,42 @@ body {
     color: #0b1f3a;
 }
 
-.language-select {
-    background-color: transparent;
+/* LINGUE */
+.language-switch {
+    display: flex;
+    gap: 10px;
+}
+
+.lang {
+    display: flex;
+    align-items: center;
+    gap: 6px;
     color: white;
+    text-decoration: none;
+    font-size: 13px;
     border: 1px solid white;
     padding: 6px 10px;
     border-radius: 20px;
+    transition: 0.3s;
 }
 
-/* MENU CHE SEGUE LO SCROLL */
+.lang img {
+    width: 16px;
+    height: 11px;
+}
+
+.lang:hover {
+    background-color: white;
+    color: #0b1f3a;
+}
+
+.lang.active {
+    background-color: #d4af37;
+    color: #0b1f3a;
+    border-color: #d4af37;
+}
+
+/* MENU STICKY */
 .sticky-menu {
     position: sticky;
     top: 0;
@@ -105,9 +132,9 @@ body {
     min-height: 650px;
     background:
         linear-gradient(rgba(245,239,230,0.20), rgba(245,239,230,0.20)),
-        url("hero.png");
+        url("hero.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -173,13 +200,7 @@ section p {
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
-/* SEZIONE AMMISSIONE */
-#admission-box {
-    background-color: #fff;
-    border: 1px solid #d4af37;
-}
-
-/* DONA */
+/* DONA ORA */
 .donate-section {
     background-color: #0b1f3a;
     color: white;
@@ -203,59 +224,6 @@ section p {
     font-weight: bold;
 }
 
-/* FOOTER */
-footer {
-    background-color: #061226;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    font-size: 14px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .top-banner {
-        height: auto;
-        flex-direction: column;
-        gap: 12px;
-        padding: 16px;
-    }
-
-    .patronage-logos {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .sticky-menu {
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    .hero {
-        min-height: 520px;
-    }
-
-    .hero-content {
-        padding: 30px 25px;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-        letter-spacing: 6px;
-    }
-
-    .hero h2 {
-        font-size: 31px;
-    }
-
-    section {
-        padding: 60px 24px;
-    }
-
-    section h2 {
-        font-size: 36px;
-    }
-}
 /* CONTATTI */
 .contacts-section {
     max-width: none;
@@ -310,7 +278,63 @@ footer {
     font-size: 14px;
 }
 
+/* FOOTER */
+footer {
+    background-color: #061226;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
+    .top-banner {
+        height: auto;
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .patronage-logos {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .top-actions {
+        flex-direction: column;
+    }
+
+    .sticky-menu {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .hero {
+        min-height: 520px;
+    }
+
+    .hero-content {
+        padding: 30px 25px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+        letter-spacing: 6px;
+    }
+
+    .hero h2 {
+        font-size: 31px;
+    }
+
+    section {
+        padding: 60px 24px;
+    }
+
+    section h2 {
+        font-size: 36px;
+    }
+
     .contacts-section {
         grid-template-columns: 1fr;
         gap: 24px;
@@ -322,7 +346,6 @@ footer {
 
 <body>
 
-<!-- BANNER SUPERIORE -->
 <div class="top-banner">
     <div class="patronage-logos">
         <img src="logo-unito.png" alt="Università degli Studi di Torino">
@@ -333,20 +356,17 @@ footer {
     <div class="top-actions">
         <a href="#ammissione" class="join-button">Diventa socio</a>
 
-        <select class="language-select" onchange="changeLanguage(this)">
-    <option value="index.html" selected>IT</option>
-    <option value="en.html">EN</option>
-</select>
-
-<script>
-function changeLanguage(select) {
-    window.location.href = select.value;
-}
-</script>
+        <div class="language-switch">
+            <a href="index.html" class="lang active">
+                <img src="it.png" alt="Italiano"> IT
+            </a>
+            <a href="en.html" class="lang">
+                <img src="en.png" alt="English"> EN
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- MENU STICKY -->
 <nav class="sticky-menu">
     <a href="#chi-siamo">Chi siamo</a>
     <a href="#news-eventi">News ed eventi</a>
@@ -354,7 +374,6 @@ function changeLanguage(select) {
     <a href="#dona-ora">Dona ora</a>
 </nav>
 
-<!-- HERO -->
 <header class="hero">
     <div class="hero-content">
         <h1>ASSOCIAZIONE</h1>
@@ -363,7 +382,6 @@ function changeLanguage(select) {
     </div>
 </header>
 
-<!-- CHI SIAMO -->
 <section id="chi-siamo">
     <h2>Chi siamo</h2>
     <p>
@@ -379,7 +397,6 @@ function changeLanguage(select) {
     </div>
 </section>
 
-<!-- NEWS ED EVENTI -->
 <section id="news-eventi">
     <h2>News ed eventi</h2>
     <p>
@@ -393,7 +410,6 @@ function changeLanguage(select) {
     </div>
 </section>
 
-<!-- COMMUNITY -->
 <section id="community">
     <h2>Community</h2>
     <p>
@@ -409,11 +425,10 @@ function changeLanguage(select) {
     </div>
 </section>
 
-<!-- AMMISSIONE -->
 <section id="ammissione">
     <h2>Diventa socio</h2>
 
-    <div class="card" id="admission-box">
+    <div class="card">
         <p>
             Per richiedere l’ammissione all’Associazione sarà necessario compilare il modulo di adesione
             e attendere la valutazione dei requisiti secondo quanto previsto dallo Statuto.
@@ -426,7 +441,6 @@ function changeLanguage(select) {
     </div>
 </section>
 
-<!-- DONA ORA -->
 <section id="dona-ora" class="donate-section">
     <h2>Dona ora</h2>
     <p>
@@ -435,13 +449,12 @@ function changeLanguage(select) {
     <a href="#" class="donate-button">Dona ora</a>
 </section>
 
-<!-- CONTATTI -->
 <section id="contatti" class="contacts-section">
     <div class="contact-box">
         <h3>Contatti</h3>
-        <p>📍 Via dell’Arsenale 22<br>Torino (TO) 10121</p>
-        <p>📱 +39 3274331196</p>
-        <p>✉️ segreteria@alumnisuiss.it</p>
+        <p>Via dell’Arsenale 22<br>Torino (TO) 10121</p>
+        <p>+39 3274331196</p>
+        <p>segreteria@alumnisuiss.it</p>
     </div>
 
     <div class="contact-box">
@@ -462,3 +475,6 @@ function changeLanguage(select) {
 <footer>
     © 2026 Associazione Alumni SUISS - Tutti i diritti riservati
 </footer>
+
+</body>
+</html>
