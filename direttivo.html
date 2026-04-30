@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consiglio Direttivo - Alumni SUISS</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: #f5efe6;
+    color: #2f241f;
+}
+
+header {
+    background-color: #0b1f3a;
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+header h1 {
+    color: #d4af37;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 30px;
+}
+
+.member-card {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 30px;
+    background: white;
+    border-left: 5px solid #d4af37;
+    padding: 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.member-card img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    background-color: #ddd;
+}
+
+.member-card h2 {
+    color: #0b1f3a;
+    margin-top: 0;
+}
+
+.role {
+    color: #6b3f2d;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: #0b1f3a;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .member-card {
+        grid-template-columns: 1fr;
+    }
+
+    .member-card img {
+        width: 100%;
+        height: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Consiglio Direttivo</h1>
+    <p>Associazione Alumni SUISS</p>
+</header>
+
+<div class="container">
+
+    <div class="member-card">
+        <img src="presidente.jpg" alt="Presidente">
+        <div>
+            <p class="role">Presidente</p>
+            <h2>Nome Cognome</h2>
+            <p>
+                Breve bio dell’Alumnus o della persona che ricopre la carica sociale.
+                Inserire percorso formativo, esperienza professionale e ruolo nell’Associazione.
+            </p>
+        </div>
+    </div>
+
+    <div class="member-card">
+        <img src="vicepresidente.jpg" alt="Vicepresidente">
+        <div>
+            <p class="role">Vicepresidente</p>
+            <h2>Nome Cognome</h2>
+            <p>
+                Breve bio dell’Alumnus o della persona che ricopre la carica sociale.
+            </p>
+        </div>
+    </div>
+
+    <div class="member-card">
+        <img src="segretario.jpg" alt="Segretario">
+        <div>
+            <p class="role">Segretario</p>
+            <h2>Nome Cognome</h2>
+            <p>
+                Breve bio del componente del Consiglio Direttivo.
+            </p>
+        </div>
+    </div>
+
+    <div class="member-card">
+        <img src="tesoriere.jpg" alt="Tesoriere">
+        <div>
+            <p class="role">Tesoriere</p>
+            <h2>Nome Cognome</h2>
+            <p>
+                Breve bio del componente del Consiglio Direttivo.
+            </p>
+        </div>
+    </div>
+
+    <div class="member-card">
+        <img src="consigliere-militare.jpg" alt="Consigliere Militare">
+        <div>
+            <p class="role">Consigliere Militare</p>
+            <h2>Nome Cognome</h2>
+            <p>
+                Breve bio del Consigliere Militare.
+            </p>
+        </div>
+    </div>
+
+    <div class="member-card">
+        <img src="consigliere-docente.jpg" alt="Consigliere Docente">
+        <div>
+            <p class="role">Consigliere Docente</p>
+            <h2>Nome Cognome</h2>
+            <p>
+                Breve bio del Consigliere Docente.
+            </p>
+        </div>
+    </div>
+
+    <div class="member-card">
+        <img src="consigliere-civile.jpg" alt="Consigliere Civile">
+        <div>
+            <p class="role">Consigliere Civile</p>
+            <h2>Nome Cognome</h2>
+            <p>
+                Breve bio del Consigliere Civile.
+            </p>
+        </div>
+    </div>
+
+    <a href="index.html#community" class="back-link">← Torna alla Community</a>
+
+</div>
+
+</body>
+</html>
