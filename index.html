@@ -378,42 +378,83 @@ footer {
 
     .sticky-menu {
         flex-direction: column;
-        gap: 16px;
+        align-items: center;
+        gap: 14px;
+        padding: 14px;
+    }
+
+    .nav-logo {
+        height: 42px;
+        margin-right: 0;
+    }
+
+    .menu-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
     }
 
     .hero {
-        min-height: 520px;
+        min-height: 430px;
+        padding: 20px;
+        background-position: center 65%;
     }
 
     .hero-content {
-        padding: 30px 25px;
+        padding: 24px 18px;
+    }
+
+    .hero-logo {
+        width: 85px;
+        margin-bottom: 14px;
     }
 
     .hero h1 {
-        font-size: 32px;
-        letter-spacing: 6px;
+        font-size: 26px;
+        letter-spacing: 4px;
     }
 
     .hero h2 {
-        font-size: 31px;
+        font-size: 26px;
     }
 
     section {
-        padding: 60px 24px;
+        padding: 50px 22px;
     }
 
     section h2 {
-        font-size: 36px;
+        font-size: 32px;
+    }
+
+    section p {
+        font-size: 17px;
+    }
+
+    .primary-button,
+    .donate-button {
+        width: 100%;
+        text-align: center;
     }
 
     .contacts-section {
         grid-template-columns: 1fr;
         gap: 24px;
-        padding: 40px 24px;
+        padding: 35px 22px;
     }
 
     .docs-grid {
         grid-template-columns: 1fr;
+    }
+
+    .photo-carousel {
+        height: 240px;
+    }
+
+    .carousel-btn {
+        font-size: 32px;
+        width: 40px;
+        height: 54px;
     }
 
     .footer-content {
@@ -422,8 +463,8 @@ footer {
         text-align: center;
     }
 }
-    
-/* SOCIAL ICONS (BOX CONTATTI) */
+
+/* SOCIAL ICONS BOX CONTATTI */
 .social-icons {
     display: flex;
     gap: 18px;
@@ -444,7 +485,12 @@ footer {
     color: #d4af37;
     transform: scale(1.1);
 }
-    /* CAROSELLO FOTO */
+
+.social-icons svg {
+    display: block;
+}
+
+/* CAROSELLO FOTO */
 .photo-carousel {
     position: relative;
     margin-top: 40px;
@@ -463,7 +509,6 @@ footer {
     display: block;
 }
 
-/* FRECCE */
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -491,24 +536,12 @@ footer {
     right: 0;
 }
 
-@media (max-width: 768px) {
-    .photo-carousel {
-        height: 260px;
-    }
-
-    .carousel-btn {
-        font-size: 32px;
-        width: 40px;
-        height: 54px;
-    }
-}
-   
-    .hero-logo {
+.hero-logo {
     width: 120px;
     margin-bottom: 20px;
 }
-    
-    .nav-logo {
+
+.nav-logo {
     height: 28px;
     margin-right: 20px;
 }
