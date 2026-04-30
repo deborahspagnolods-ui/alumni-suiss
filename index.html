@@ -6,175 +6,370 @@
 <title>Associazione Alumni SUISS</title>
 
 <style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: 'Georgia', serif;
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: #f5efe6;
+    color: #2f241f;
+}
+
+/* BANNER SUPERIORE */
+.top-banner {
     background-color: #0b1f3a;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 42px;
+}
+
+.patronage-logos {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.patronage-logos img {
+    height: 34px;
+    width: auto;
+    background-color: white;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.join-button {
     color: white;
-}
-
-/* HEADER */
-header {
-    text-align: center;
-    padding: 50px 20px;
-    background: linear-gradient(180deg, #0b1f3a, #061226);
-}
-
-header img {
-    width: 140px;
-    margin-bottom: 15px;
-}
-
-h1 {
-    color: gold;
-    margin: 10px 0;
-    letter-spacing: 1px;
-}
-
-.subtitle {
-    color: #ccc;
-    font-size: 18px;
-}
-
-/* NAVBAR */
-nav {
-    text-align: center;
-    background-color: #061226;
-    padding: 15px;
-}
-
-nav a {
-    color: gold;
-    margin: 0 20px;
+    border: 1px solid white;
+    padding: 7px 18px;
+    border-radius: 20px;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 13px;
+    transition: 0.3s;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.join-button:hover {
+    background-color: white;
+    color: #0b1f3a;
+}
+
+.language-select {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+/* MENU CHE SEGUE LO SCROLL */
+.sticky-menu {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #0b1f3a;
+    display: flex;
+    justify-content: center;
+    gap: 54px;
+    padding: 16px 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.sticky-menu a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.sticky-menu a:hover {
+    color: #d4af37;
+}
+
+/* HERO */
+.hero {
+    min-height: 650px;
+    background:
+        linear-gradient(rgba(245,239,230,0.20), rgba(245,239,230,0.20)),
+        url("hero.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    background-color: rgba(245, 239, 230, 0.70);
+    padding: 42px 78px;
+}
+
+.hero h1 {
+    margin: 0;
+    color: #111;
+    font-family: Arial, sans-serif;
+    font-size: 52px;
+    letter-spacing: 12px;
+}
+
+.hero h2 {
+    margin: 6px 0 32px;
+    color: #111;
+    font-size: 46px;
+    font-weight: normal;
+}
+
+.learn-button {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    padding: 12px 38px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
 }
 
 /* SEZIONI */
 section {
-    padding: 50px 20px;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
+    padding: 85px 40px;
 }
 
-h2 {
-    color: gold;
-    margin-bottom: 15px;
+section h2 {
+    color: #6b3f2d;
+    font-size: 44px;
+    font-weight: normal;
+    margin-bottom: 20px;
 }
 
-/* CARD */
+section p {
+    font-size: 21px;
+    line-height: 1.65;
+}
+
 .card {
-    background-color: #12294a;
-    padding: 20px;
-    margin-top: 20px;
-    border-left: 4px solid gold;
+    background-color: #ffffff;
+    padding: 32px;
+    margin-top: 28px;
+    border-left: 5px solid #d4af37;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* SEZIONE AMMISSIONE */
+#admission-box {
+    background-color: #fff;
+    border: 1px solid #d4af37;
+}
+
+/* DONA */
+.donate-section {
+    background-color: #0b1f3a;
+    color: white;
+    max-width: none;
+    text-align: center;
+}
+
+.donate-section h2 {
+    color: #d4af37;
+}
+
+.donate-button {
+    display: inline-block;
+    margin-top: 22px;
+    background-color: #d4af37;
+    color: #0b1f3a;
+    padding: 14px 36px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
 }
 
 /* FOOTER */
 footer {
+    background-color: #061226;
+    color: white;
     text-align: center;
     padding: 25px;
-    background-color: #061226;
-    margin-top: 40px;
     font-size: 14px;
 }
-</style>
 
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .top-banner {
+        height: auto;
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .patronage-logos {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sticky-menu {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .hero {
+        min-height: 520px;
+    }
+
+    .hero-content {
+        padding: 30px 25px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+        letter-spacing: 6px;
+    }
+
+    .hero h2 {
+        font-size: 31px;
+    }
+
+    section {
+        padding: 60px 24px;
+    }
+
+    section h2 {
+        font-size: 36px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-    <img src="logo.png" alt="Logo Associazione">
-    <h1>Associazione Alumni SUISS</h1>
-    <p class="subtitle">Comunità · Strategia · Eccellenza</p>
-</header>
+<!-- BANNER SUPERIORE -->
+<div class="top-banner">
+    <div class="patronage-logos">
+        <img src="logo-unito.png" alt="Università degli Studi di Torino">
+        <img src="logo-suiss.png" alt="SUISS">
+        <img src="logo-sue.png" alt="Scuola Ufficiali dell'Esercito">
+    </div>
 
-<nav>
-    <a href="#home">Home</a>
+    <div class="top-actions">
+        <a href="#ammissione" class="join-button">Diventa socio</a>
+
+        <select class="language-select">
+            <option>IT</option>
+            <option>EN</option>
+        </select>
+    </div>
+</div>
+
+<!-- MENU STICKY -->
+<nav class="sticky-menu">
     <a href="#chi-siamo">Chi siamo</a>
-    <a href="#attivita">Attività</a>
-    <a href="#membri">Membri</a>
-    <a href="#contatti">Contatti</a>
+    <a href="#news-eventi">News ed eventi</a>
+    <a href="#community">Community</a>
+    <a href="#dona-ora">Dona ora</a>
 </nav>
 
-<section id="home">
-    <h2>Benvenuti</h2>
-    <p>
-        L’Associazione Alumni SUISS è una comunità autonoma e indipendente che riunisce
-        Alumni, studenti e docenti della Scuola Universitaria Interdipartimentale in Scienze Strategiche.
-    </p>
-</section>
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-content">
+        <h1>ASSOCIAZIONE</h1>
+        <h2>ALUMNI SUISS</h2>
+        <a href="#chi-siamo" class="learn-button">Learn more</a>
+    </div>
+</header>
 
+<!-- CHI SIAMO -->
 <section id="chi-siamo">
     <h2>Chi siamo</h2>
-    <div class="card">
-        <p>
-        L’Associazione promuove il networking tra Alumni, favorisce lo scambio di conoscenze e
-        contribuisce alla diffusione delle scienze strategiche a livello nazionale e internazionale.
-        </p>
-    </div>
+    <p>
+        L’Associazione Alumni SUISS nasce per riunire Alumni, studenti, docenti e sostenitori
+        della Scuola Universitaria Interdipartimentale in Scienze Strategiche.
+    </p>
 
     <div class="card">
         <p>
-        Opera in collaborazione con Università, SUISS e istituzioni affini, mantenendo piena autonomia
-        organizzativa e decisionale.
+            L’Associazione promuove relazioni culturali e professionali, valorizza il ruolo degli Alumni
+            e favorisce lo scambio di conoscenze e competenze a livello nazionale e internazionale.
         </p>
     </div>
 </section>
 
-<section id="attivita">
-    <h2>Attività</h2>
+<!-- NEWS ED EVENTI -->
+<section id="news-eventi">
+    <h2>News ed eventi</h2>
+    <p>
+        In questa sezione saranno pubblicati aggiornamenti, incontri, conferenze, iniziative culturali
+        e appuntamenti ufficiali dell’Associazione.
+    </p>
 
     <div class="card">
-        <strong>Networking</strong>
-        <p>Connessione tra Alumni e professionisti a livello nazionale e internazionale.</p>
+        <strong>Prossimamente</strong>
+        <p>Calendario eventi e comunicazioni ufficiali.</p>
     </div>
-
-    <div class="card">
-        <strong>Eventi</strong>
-        <p>Incontri, conferenze e iniziative culturali e professionali.</p>
-    </div>
-
-    <div class="card">
-        <strong>Supporto ai giovani</strong>
-        <p>Supporto a studenti e neolaureati per l’ingresso nel mondo del lavoro.</p>
-    </div>
-
 </section>
 
-<section id="membri">
-    <h2>Membri</h2>
+<!-- COMMUNITY -->
+<section id="community">
+    <h2>Community</h2>
+    <p>
+        La Community Alumni SUISS è uno spazio di networking, confronto professionale e collaborazione
+        tra soci, Alumni, studenti e realtà istituzionali.
+    </p>
 
     <div class="card">
-        <strong>Alumni</strong>
-        <p>Laureati SUISS che partecipano attivamente alla vita associativa.</p>
+        <p>
+            L’obiettivo è consolidare una rete attiva, autorevole e orientata alla crescita professionale,
+            culturale e istituzionale dei suoi membri.
+        </p>
     </div>
-
-    <div class="card">
-        <strong>Studenti</strong>
-        <p>Iscritti ai percorsi SUISS coinvolti nelle attività dell’Associazione.</p>
-    </div>
-
-    <div class="card">
-        <strong>Docenti e sostenitori</strong>
-        <p>Professionisti e sostenitori che contribuiscono allo sviluppo dell’Associazione.</p>
-    </div>
-
 </section>
 
-<section id="contatti">
-    <h2>Contatti</h2>
-    <p>Email: info@alumnisuiss.it</p>
-    <p>Sede: Torino</p>
+<!-- AMMISSIONE -->
+<section id="ammissione">
+    <h2>Diventa socio</h2>
+
+    <div class="card" id="admission-box">
+        <p>
+            Per richiedere l’ammissione all’Associazione sarà necessario compilare il modulo di adesione
+            e attendere la valutazione dei requisiti secondo quanto previsto dallo Statuto.
+        </p>
+
+        <p>
+            Possono aderire Alumni, studenti, docenti e sostenitori secondo le categorie associative
+            previste dallo Statuto dell’Associazione.
+        </p>
+    </div>
+</section>
+
+<!-- DONA ORA -->
+<section id="dona-ora" class="donate-section">
+    <h2>Dona ora</h2>
+    <p>
+        Sostieni le attività culturali, formative e professionali dell’Associazione Alumni SUISS.
+    </p>
+    <a href="#" class="donate-button">Dona ora</a>
 </section>
 
 <footer>
-    <p>© 2026 Associazione Alumni SUISS - Tutti i diritti riservati</p>
+    © 2026 Associazione Alumni SUISS - Tutti i diritti riservati
 </footer>
 
 </body>
