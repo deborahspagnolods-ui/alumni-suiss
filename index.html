@@ -256,6 +256,67 @@ footer {
         font-size: 36px;
     }
 }
+/* CONTATTI */
+.contacts-section {
+    max-width: none;
+    background-color: #f5efe6;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 46px;
+    padding: 55px 42px;
+}
+
+.contact-box {
+    border: 1px solid #0b1f3a;
+    padding: 28px 32px;
+    min-height: 175px;
+    color: #2f241f;
+}
+
+.contact-box h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #0b1f3a;
+}
+
+.contact-box p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+    margin: 12px 0 35px;
+}
+
+.social-icons a {
+    color: #0b1f3a;
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.tag-button {
+    display: inline-block;
+    border: 1px solid #0b1f3a;
+    color: #0b1f3a;
+    padding: 12px 28px;
+    border-radius: 24px;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .contacts-section {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 40px 24px;
+    }
+}
 </style>
 </head>
 
@@ -368,9 +429,30 @@ footer {
     <a href="#" class="donate-button">Dona ora</a>
 </section>
 
+<!-- CONTATTI -->
+<section id="contatti" class="contacts-section">
+    <div class="contact-box">
+        <h3>Contatti</h3>
+        <p>📍 Via dell’Arsenale 22<br>Torino (TO) 10121</p>
+        <p>📱 +39 3274331196</p>
+        <p>✉️ segreteria@alumnisuiss.it</p>
+    </div>
+
+    <div class="contact-box">
+        <h3>Dona ora</h3>
+        <p>Coordinate IBAN</p>
+    </div>
+
+    <div class="contact-box">
+        <h3>Get Social</h3>
+        <div class="social-icons">
+            <a href="#">f</a>
+            <a href="#">𝕏</a>
+        </div>
+        <a href="#" class="tag-button">Tag us in your photos!</a>
+    </div>
+</section>
+
 <footer>
     © 2026 Associazione Alumni SUISS - Tutti i diritti riservati
 </footer>
-
-</body>
-</html>
