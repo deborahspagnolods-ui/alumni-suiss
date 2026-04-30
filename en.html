@@ -6,8 +6,13 @@
 <title>Alumni SUISS Association</title>
 
 <style>
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -28,20 +33,22 @@ body {
 
 .patronage-logos {
     display: flex;
+    align-items: center;
     gap: 18px;
 }
 
 .patronage-logos img {
     height: 34px;
-    background: white;
+    width: auto;
+    background-color: white;
     padding: 4px;
     border-radius: 4px;
 }
 
 .top-actions {
     display: flex;
-    gap: 14px;
     align-items: center;
+    gap: 14px;
 }
 
 .join-button {
@@ -51,22 +58,50 @@ body {
     border-radius: 20px;
     text-decoration: none;
     font-size: 13px;
+    transition: 0.3s;
 }
 
 .join-button:hover {
-    background: white;
+    background-color: white;
     color: #0b1f3a;
 }
 
-.language-select {
-    background: transparent;
+/* LANGUAGE SWITCH */
+.language-switch {
+    display: flex;
+    gap: 10px;
+}
+
+.lang {
+    display: flex;
+    align-items: center;
+    gap: 6px;
     color: white;
+    text-decoration: none;
+    font-size: 13px;
     border: 1px solid white;
     padding: 6px 10px;
     border-radius: 20px;
+    transition: 0.3s;
 }
 
-/* MENU */
+.lang img {
+    width: 16px;
+    height: 11px;
+}
+
+.lang:hover {
+    background-color: white;
+    color: #0b1f3a;
+}
+
+.lang.active {
+    background-color: #d4af37;
+    color: #0b1f3a;
+    border-color: #d4af37;
+}
+
+/* STICKY MENU */
 .sticky-menu {
     position: sticky;
     top: 0;
@@ -74,16 +109,18 @@ body {
     background-color: #0b1f3a;
     display: flex;
     justify-content: center;
-    gap: 50px;
-    padding: 15px;
+    gap: 54px;
+    padding: 16px 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 .sticky-menu a {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 13px;
     letter-spacing: 2px;
+    font-size: 13px;
 }
 
 .sticky-menu a:hover {
@@ -94,71 +131,81 @@ body {
 .hero {
     min-height: 650px;
     background:
-        linear-gradient(rgba(245,239,230,0.2), rgba(245,239,230,0.2)),
+        linear-gradient(rgba(245,239,230,0.20), rgba(245,239,230,0.20)),
         url("hero.jpg");
     background-size: cover;
     background-position: center top;
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-.hero-content {
-    background: rgba(245,239,230,0.7);
-    padding: 40px 70px;
+    justify-content: center;
     text-align: center;
 }
 
+.hero-content {
+    background-color: rgba(245, 239, 230, 0.70);
+    padding: 42px 78px;
+}
+
 .hero h1 {
+    margin: 0;
+    color: #111;
+    font-family: Arial, sans-serif;
     font-size: 52px;
     letter-spacing: 12px;
-    font-family: Arial;
 }
 
 .hero h2 {
+    margin: 6px 0 32px;
+    color: #111;
     font-size: 46px;
-    margin: 10px 0 30px;
+    font-weight: normal;
 }
 
 .learn-button {
-    background: white;
-    padding: 12px 36px;
-    text-decoration: none;
+    display: inline-block;
+    background-color: white;
     color: black;
+    padding: 12px 38px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
     font-size: 12px;
     letter-spacing: 2px;
+    font-weight: bold;
 }
 
 /* SECTIONS */
 section {
     max-width: 1100px;
     margin: auto;
-    padding: 80px 40px;
+    padding: 85px 40px;
 }
 
 section h2 {
-    font-size: 42px;
     color: #6b3f2d;
+    font-size: 44px;
+    font-weight: normal;
+    margin-bottom: 20px;
 }
 
 section p {
-    font-size: 20px;
-    line-height: 1.6;
+    font-size: 21px;
+    line-height: 1.65;
 }
 
 .card {
-    background: white;
-    padding: 30px;
-    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 32px;
+    margin-top: 28px;
     border-left: 5px solid #d4af37;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
-/* DONATION */
+/* DONATE */
 .donate-section {
     background-color: #0b1f3a;
     color: white;
-    text-align: center;
     max-width: none;
+    text-align: center;
 }
 
 .donate-section h2 {
@@ -166,136 +213,246 @@ section p {
 }
 
 .donate-button {
-    background: #d4af37;
-    color: #0b1f3a;
-    padding: 14px 34px;
-    text-decoration: none;
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 22px;
+    background-color: #d4af37;
+    color: #0b1f3a;
+    padding: 14px 36px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
 }
 
 /* CONTACTS */
 .contacts-section {
+    max-width: none;
     background-color: #f5efe6;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    padding: 60px;
+    gap: 46px;
+    padding: 55px 42px;
 }
 
 .contact-box {
     border: 1px solid #0b1f3a;
-    padding: 25px;
+    padding: 28px 32px;
+    min-height: 175px;
+    color: #2f241f;
 }
 
 .contact-box h3 {
+    margin-top: 0;
+    font-size: 24px;
     color: #0b1f3a;
+}
+
+.contact-box p {
+    font-size: 15px;
+    line-height: 1.6;
 }
 
 .social-icons {
     display: flex;
-    gap: 15px;
-    font-size: 30px;
+    gap: 16px;
+    margin: 12px 0 35px;
+}
+
+.social-icons a {
+    color: #0b1f3a;
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .tag-button {
-    border: 1px solid #0b1f3a;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-decoration: none;
     display: inline-block;
-    margin-top: 20px;
+    border: 1px solid #0b1f3a;
+    color: #0b1f3a;
+    padding: 12px 28px;
+    border-radius: 24px;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 /* FOOTER */
 footer {
-    background: #061226;
+    background-color: #061226;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .top-banner {
+        height: auto;
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .patronage-logos {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .top-actions {
+        flex-direction: column;
+    }
+
+    .sticky-menu {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .hero {
+        min-height: 520px;
+    }
+
+    .hero-content {
+        padding: 30px 25px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+        letter-spacing: 6px;
+    }
+
+    .hero h2 {
+        font-size: 31px;
+    }
+
+    section {
+        padding: 60px 24px;
+    }
+
+    section h2 {
+        font-size: 36px;
+    }
+
+    .contacts-section {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 40px 24px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- TOP -->
 <div class="top-banner">
     <div class="patronage-logos">
-        <img src="logo-unito.png">
-        <img src="logo-suiss.png">
-        <img src="logo-sue.png">
+        <img src="logo-unito.png" alt="University of Turin">
+        <img src="logo-suiss.png" alt="SUISS">
+        <img src="logo-sue.png" alt="Army Officers School">
     </div>
 
     <div class="top-actions">
-        <a href="#ammissione" class="join-button">Join us</a>
+        <a href="#admission" class="join-button">Join us</a>
 
-        <select class="language-select" onchange="changeLanguage(this)">
-            <option value="index.html">IT</option>
-            <option value="en.html" selected>EN</option>
-        </select>
+        <div class="language-switch">
+            <a href="index.html" class="lang">
+                <img src="it.png" alt="Italian"> IT
+            </a>
+            <a href="en.html" class="lang active">
+                <img src="en.png" alt="English"> EN
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- MENU -->
 <nav class="sticky-menu">
-    <a href="#chi-siamo">About</a>
-    <a href="#news-eventi">News & Events</a>
+    <a href="#about">About</a>
+    <a href="#news-events">News & Events</a>
     <a href="#community">Community</a>
-    <a href="#dona-ora">Donate</a>
+    <a href="#donate">Donate</a>
 </nav>
 
-<!-- HERO -->
 <header class="hero">
     <div class="hero-content">
         <h1>ASSOCIATION</h1>
         <h2>ALUMNI SUISS</h2>
-        <a href="#chi-siamo" class="learn-button">Learn more</a>
+        <a href="#about" class="learn-button">Learn more</a>
     </div>
 </header>
 
-<!-- ABOUT -->
-<section id="chi-siamo">
+<section id="about">
     <h2>About</h2>
     <p>
         The Alumni SUISS Association brings together alumni, students, faculty and supporters
         of the Interdepartmental University School of Strategic Sciences.
     </p>
+
+    <div class="card">
+        <p>
+            The Association promotes cultural and professional relations, enhances the role of Alumni
+            and encourages the exchange of knowledge and expertise at national and international level.
+        </p>
+    </div>
 </section>
 
-<!-- EVENTS -->
-<section id="news-eventi">
+<section id="news-events">
     <h2>News & Events</h2>
-    <p>Upcoming conferences, meetings and official initiatives.</p>
+    <p>
+        This section will feature updates, meetings, conferences, cultural initiatives and official events
+        promoted by the Association.
+    </p>
+
+    <div class="card">
+        <strong>Coming soon</strong>
+        <p>Events calendar and official communications.</p>
+    </div>
 </section>
 
-<!-- COMMUNITY -->
 <section id="community">
     <h2>Community</h2>
     <p>
-        A professional network fostering collaboration, exchange of knowledge
-        and institutional engagement.
+        The Alumni SUISS Community is a space for networking, professional exchange and collaboration
+        among members, alumni, students and institutional stakeholders.
     </p>
+
+    <div class="card">
+        <p>
+            Its purpose is to consolidate an active, authoritative network focused on the professional,
+            cultural and institutional growth of its members.
+        </p>
+    </div>
 </section>
 
-<!-- JOIN -->
-<section id="ammissione">
+<section id="admission">
     <h2>Join the Association</h2>
-    <p>Membership is subject to evaluation according to the Statute.</p>
+
+    <div class="card">
+        <p>
+            To apply for membership, applicants will be required to complete the membership form
+            and await the assessment of requirements in accordance with the Association Statute.
+        </p>
+
+        <p>
+            Alumni, students, faculty members and supporters may join according to the membership
+            categories provided for by the Association Statute.
+        </p>
+    </div>
 </section>
 
-<!-- DONATE -->
-<section id="dona-ora" class="donate-section">
+<section id="donate" class="donate-section">
     <h2>Donate</h2>
-    <p>Support our initiatives.</p>
+    <p>
+        Support the cultural, educational and professional activities of the Alumni SUISS Association.
+    </p>
     <a href="#" class="donate-button">Donate</a>
 </section>
 
-<!-- CONTACTS -->
-<section class="contacts-section">
+<section id="contacts" class="contacts-section">
     <div class="contact-box">
         <h3>Contacts</h3>
-        <p>Via dell’Arsenale 22<br>Turin, Italy</p>
+        <p>Via dell’Arsenale 22<br>Turin, Italy 10121</p>
         <p>+39 3274331196</p>
         <p>segreteria@alumnisuiss.it</p>
     </div>
@@ -308,22 +465,16 @@ footer {
     <div class="contact-box">
         <h3>Get Social</h3>
         <div class="social-icons">
-            <span>f</span>
-            <span>𝕏</span>
+            <a href="#">f</a>
+            <a href="#">𝕏</a>
         </div>
         <a href="#" class="tag-button">Tag us in your photos!</a>
     </div>
 </section>
 
 <footer>
-© 2026 Alumni SUISS Association
+    © 2026 Alumni SUISS Association - All rights reserved
 </footer>
-
-<script>
-function changeLanguage(select) {
-    window.location.href = select.value;
-}
-</script>
 
 </body>
 </html>
