@@ -108,13 +108,16 @@ body {
     z-index: 1000;
     background-color: #0b1f3a;
     display: flex;
-    justify-content: center;
-    gap: 42px;
-    padding: 16px 20px;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 30px;
 }
 
+.menu-links {
+    display: flex;
+    gap: 30px;
+}
+    
 .sticky-menu a {
     color: white;
     text-decoration: none;
@@ -499,6 +502,16 @@ footer {
         height: 54px;
     }
 }
+   
+    .hero-logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+    
+    .nav-logo {
+    height: 28px;
+    margin-right: 20px;
+}
 </style>
 </head>
 
@@ -526,15 +539,22 @@ footer {
 </div>
 
 <nav class="sticky-menu">
-    <a href="#chi-siamo">Chi siamo</a>
-    <a href="#news-eventi">News ed eventi</a>
-    <a href="#community">Community</a>
-    <a href="#dona-ora">Dona ora</a>
-    <a href="#trasparenza">Trasparenza</a>
-</nav>
 
+    <img src="logo.png" alt="Logo" class="nav-logo">
+
+    <div class="menu-links">
+        <a href="#chi-siamo">Chi siamo</a>
+        <a href="#news-eventi">News ed eventi</a>
+        <a href="#community">Community</a>
+        <a href="#dona-ora">Dona ora</a>
+        <a href="#trasparenza">Trasparenza</a>
+    </div>
+
+</nav>
 <header class="hero">
     <div class="hero-content">
+        <img src="logo.png" alt="Logo Alumni SUISS" class="hero-logo">
+        
         <h1>ASSOCIAZIONE</h1>
         <h2>ALUMNI SUISS</h2>
         <a href="#chi-siamo" class="learn-button">Scopri di più</a>
