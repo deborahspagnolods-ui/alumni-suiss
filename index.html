@@ -762,7 +762,9 @@ const galleryImages = [
 ];
 
 let currentSlide = 0;
+let autoSlideInterval;
 
+/* cambia slide manuale */
 function changeSlide(direction) {
     currentSlide += direction;
 
@@ -774,8 +776,36 @@ function changeSlide(direction) {
         currentSlide = 0;
     }
 
+    updateImage();
+    restartAutoSlide();
+}
+
+/* aggiorna immagine */
+function updateImage() {
     document.getElementById("carouselImage").src = galleryImages[currentSlide];
 }
+
+/* autoplay */
+function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+        currentSlide++;
+        if (currentSlide >= galleryImages.length) {
+            currentSlide = 0;
+        }
+        updateImage();
+    }, 4000); // cambia ogni 4 secondi
+}
+
+/* riavvia autoplay dopo click */
+function restartAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+}
+
+/* avvio automatico al caricamento */
+window.onload = function () {
+    startAutoSlide();
+};
 </script>
 
 </body>
