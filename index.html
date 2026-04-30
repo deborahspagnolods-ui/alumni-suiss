@@ -333,10 +333,16 @@ footer {
     <div class="top-actions">
         <a href="#ammissione" class="join-button">Diventa socio</a>
 
-        <select class="language-select">
-            <option>IT</option>
-            <option>EN</option>
-        </select>
+        <select class="language-select" onchange="changeLanguage(this)">
+    <option value="index.html" selected>IT</option>
+    <option value="en.html">EN</option>
+</select>
+
+<script>
+function changeLanguage(select) {
+    window.location.href = select.value;
+}
+</script>
     </div>
 </div>
 
