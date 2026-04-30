@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portale Ammissione - Alumni SUISS</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: #f5efe6;
+    color: #2f241f;
+}
+
+header {
+    background-color: #0b1f3a;
+    color: white;
+    padding: 35px 25px;
+    text-align: center;
+}
+
+header h1 {
+    color: #d4af37;
+    margin-bottom: 8px;
+}
+
+.container {
+    max-width: 950px;
+    margin: 50px auto;
+    background: white;
+    padding: 40px;
+    border-left: 6px solid #d4af37;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+h2 {
+    color: #0b1f3a;
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 13px;
+    margin-top: 7px;
+    border: 1px solid #0b1f3a;
+    background-color: #f5efe6;
+    font-size: 15px;
+}
+
+.document-box {
+    margin-top: 25px;
+    padding: 25px;
+    background-color: #f5efe6;
+    border: 1px solid #d4af37;
+}
+
+.document-upload {
+    margin-top: 14px;
+}
+
+.checkbox {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.checkbox input {
+    width: auto;
+}
+
+button {
+    margin-top: 30px;
+    background-color: #0b1f3a;
+    color: white;
+    border: none;
+    padding: 15px 34px;
+    font-weight: bold;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d4af37;
+    color: #0b1f3a;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: #0b1f3a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 25px 15px;
+        padding: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Portale richiesta di ammissione</h1>
+    <p>Associazione Alumni SUISS</p>
+</header>
+
+<div class="container">
+    <h2>Domanda di ammissione</h2>
+
+    <p>
+        Compila i dati richiesti e seleziona la tipologia di socio.
+        I documenti da caricare compariranno automaticamente in base alla categoria scelta.
+    </p>
+
+    <form>
+        <label>Tipologia di socio</label>
+        <select id="tipoSocio" onchange="mostraDocumenti()" required>
+            <option value="">Seleziona una categoria</option>
+            <option value="studente">Studente</option>
+            <option value="docente">Docente</option>
+            <option value="ordinario">Alumni Ordinario</option>
+            <option value="vitalizio">Alumni Vitalizio</option>
+            <option value="sostenitore">Sostenitore</option>
+        </select>
+
+        <label>Nome</label>
+        <input type="text" required>
+
+        <label>Cognome</label>
+        <input type="text" required>
+
+        <label>Codice fiscale</label>
+        <input type="text" required>
+
+        <label>Email</label>
+        <input type="email" required>
+
+        <label>Telefono</label>
+        <input type="tel" required>
+
+        <label>Indirizzo di residenza</label>
+        <input type="text" required>
+
+        <div id="documenti" class="document-box">
+            <p>Seleziona una tipologia di socio per visualizzare i documenti richiesti.</p>
+        </div>
+
+        <label>Eventuali note</label>
+        <textarea rows="5"></textarea>
+
+        <div class="checkbox">
+            <input type="checkbox" required>
+            <span>Dichiaro di aver preso visione dello Statuto dell’Associazione.</span>
+        </div>
+
+        <div class="checkbox">
+            <input type="checkbox" required>
+            <span>Autorizzo il trattamento dei dati personali ai fini della gestione della richiesta di ammissione.</span>
+        </div>
+
+        <div class="checkbox">
+            <input type="checkbox" required>
+            <span>Dichiaro che le informazioni fornite sono veritiere.</span>
+        </div>
+
+        <button type="submit">Invia richiesta di ammissione</button>
+    </form>
+
+    <a href="index.html" class="back-link">← Torna al sito</a>
+</div>
+
+<script>
+function mostraDocumenti() {
+    const tipo = document.getElementById("tipoSocio").value;
+    const box = document.getElementById("documenti");
+
+    const documenti = {
+        studente: [
+            "Documento di identità",
+            "Foto formato tessera",
+            "Attestazione di iscrizione alla SUISS",
+            "Ricevuta di pagamento"
+        ],
+        docente: [
+            "Documento di identità",
+            "Foto formato tessera",
+            "Attestazione di insegnamento presso la SUISS",
+            "Ricevuta di pagamento"
+        ],
+        ordinario: [
+            "Documento di identità",
+            "Foto formato tessera",
+            "Attestazione del titolo conseguito presso la SUISS",
+            "Ricevuta di pagamento"
+        ],
+        vitalizio: [
+            "Documento di identità",
+            "Foto formato tessera",
+            "Ricevuta di pagamento"
+        ],
+        sostenitore: [
+            "Documento di identità",
+            "Foto formato tessera",
+            "Ricevuta di donazione",
+            "Eventuali indicazioni per l’utilizzo delle risorse donate"
+        ]
+    };
+
+    if (!tipo) {
+        box.innerHTML = "<p>Seleziona una tipologia di socio per visualizzare i documenti richiesti.</p>";
+        return;
+    }
+
+    let html = "<h3>Documenti richiesti</h3>";
+
+    documenti[tipo].forEach(doc => {
+        html += `
+            <div class="document-upload">
+                <label>${doc}</label>
+                <input type="file" required>
+            </div>
+        `;
+    });
+
+    box.innerHTML = html;
+}
+</script>
+
+</body>
+</html>
