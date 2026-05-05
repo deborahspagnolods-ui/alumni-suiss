@@ -109,16 +109,26 @@ body {
     background-color: #0b1f3a;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 12px 30px;
+    justify-content: center;
+    gap: 28px;
+    padding: 14px 24px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.nav-logo {
+    height: 28px;
+    margin-right: 12px;
 }
 
 .menu-links {
     display: flex;
     gap: 30px;
+    align-items: center;
 }
-    
-.sticky-menu a {
+
+.menu-links a,
+.dropdown > a {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
@@ -126,8 +136,44 @@ body {
     font-size: 13px;
 }
 
-.sticky-menu a:hover {
+.menu-links a:hover,
+.dropdown > a:hover {
     color: #d4af37;
+}
+
+/* MENU A TENDINA */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0b1f3a;
+    min-width: 230px;
+    top: 28px;
+    left: 0;
+    border: 1px solid rgba(255,255,255,0.25);
+    z-index: 2000;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 13px 18px;
+    color: white;
+    text-align: left;
+    letter-spacing: 1px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.dropdown-content a:hover {
+    background-color: #d4af37;
+    color: #0b1f3a;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* HERO */
@@ -148,6 +194,11 @@ body {
 .hero-content {
     background-color: rgba(245, 239, 230, 0.70);
     padding: 42px 78px;
+}
+
+.hero-logo {
+    width: 120px;
+    margin-bottom: 20px;
 }
 
 .hero h1 {
@@ -208,6 +259,7 @@ section p {
 .primary-button {
     display: inline-block;
     margin-top: 24px;
+    margin-right: 12px;
     background-color: #0b1f3a;
     color: white;
     padding: 14px 34px;
@@ -219,6 +271,97 @@ section p {
 .primary-button:hover {
     background-color: #d4af37;
     color: #0b1f3a;
+}
+
+/* IN EVIDENZA */
+.featured-section {
+    max-width: none;
+    background-color: #ffffff;
+    padding: 70px 40px;
+    text-align: center;
+}
+
+.featured-section h2 {
+    color: #0b1f3a;
+}
+
+.featured-grid {
+    max-width: 1100px;
+    margin: 35px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+.featured-box {
+    background-color: #f5efe6;
+    border: 1px solid #0b1f3a;
+    padding: 28px;
+    text-align: left;
+}
+
+.featured-box h3 {
+    color: #0b1f3a;
+    margin-top: 0;
+}
+
+.scroll-box {
+    height: 180px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.scroll-box p {
+    font-size: 16px;
+    border-bottom: 1px solid #d4af37;
+    padding-bottom: 14px;
+}
+
+/* CAROSELLO FOTO */
+.photo-carousel {
+    position: relative;
+    margin-top: 40px;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    border: 1px solid #0b1f3a;
+    background-color: #ffffff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.photo-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(11, 31, 58, 0.75);
+    color: white;
+    border: none;
+    font-size: 42px;
+    width: 48px;
+    height: 64px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background-color: #d4af37;
+    color: #0b1f3a;
+}
+
+.carousel-btn.prev {
+    left: 0;
+}
+
+.carousel-btn.next {
+    right: 0;
 }
 
 /* DONA ORA */
@@ -271,6 +414,32 @@ section p {
 .contact-box p {
     font-size: 15px;
     line-height: 1.6;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    display: flex;
+    gap: 18px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.social-icons a {
+    color: #0b1f3a;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #d4af37;
+    transform: scale(1.1);
+}
+
+.social-icons svg {
+    display: block;
 }
 
 /* AMMINISTRAZIONE TRASPARENTE */
@@ -389,10 +558,14 @@ footer {
     }
 
     .menu-links {
-        display: flex;
         flex-direction: column;
         gap: 12px;
         text-align: center;
+    }
+
+    .dropdown-content {
+        position: static;
+        margin-top: 8px;
     }
 
     .hero {
@@ -431,20 +604,22 @@ footer {
         font-size: 17px;
     }
 
+    .featured-grid,
+    .contacts-section,
+    .docs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-section,
+    .contacts-section {
+        padding: 35px 22px;
+    }
+
     .primary-button,
     .donate-button {
         width: 100%;
         text-align: center;
-    }
-
-    .contacts-section {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        padding: 35px 22px;
-    }
-
-    .docs-grid {
-        grid-template-columns: 1fr;
+        margin-right: 0;
     }
 
     .photo-carousel {
@@ -462,88 +637,6 @@ footer {
         gap: 15px;
         text-align: center;
     }
-}
-
-/* SOCIAL ICONS BOX CONTATTI */
-.social-icons {
-    display: flex;
-    gap: 18px;
-    margin-top: 15px;
-    align-items: center;
-}
-
-.social-icons a {
-    color: #0b1f3a;
-    text-decoration: none;
-    font-size: 22px;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.social-icons a:hover {
-    color: #d4af37;
-    transform: scale(1.1);
-}
-
-.social-icons svg {
-    display: block;
-}
-
-/* CAROSELLO FOTO */
-.photo-carousel {
-    position: relative;
-    margin-top: 40px;
-    width: 100%;
-    height: 420px;
-    overflow: hidden;
-    border: 1px solid #0b1f3a;
-    background-color: #ffffff;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-}
-
-.photo-carousel img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    background-color: #000; /* opzionale: bande nere eleganti */
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(11, 31, 58, 0.75);
-    color: white;
-    border: none;
-    font-size: 42px;
-    width: 48px;
-    height: 64px;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.carousel-btn:hover {
-    background-color: #d4af37;
-    color: #0b1f3a;
-}
-
-.carousel-btn.prev {
-    left: 0;
-}
-
-.carousel-btn.next {
-    right: 0;
-}
-
-.hero-logo {
-    width: 120px;
-    margin-bottom: 20px;
-}
-
-.nav-logo {
-    height: 28px;
-    margin-right: 20px;
 }
 </style>
 </head>
@@ -572,27 +665,70 @@ footer {
 </div>
 
 <nav class="sticky-menu">
-
-    <img src="logo.png" alt="Logo" class="nav-logo">
+    <img src="logo.png" alt="Logo Alumni SUISS" class="nav-logo">
 
     <div class="menu-links">
-        <a href="#chi-siamo">Chi siamo</a>
+
+        <div class="dropdown">
+            <a href="#chi-siamo">Chi siamo ▾</a>
+            <div class="dropdown-content">
+                <a href="storia.html">La storia</a>
+                <a href="attivita.html">Le attività</a>
+            </div>
+        </div>
+
         <a href="#news-eventi">News ed eventi</a>
-        <a href="#community">Community</a>
+
+        <div class="dropdown">
+            <a href="#community">Community ▾</a>
+            <div class="dropdown-content">
+                <a href="sostenitori.html">Sostenitori e sostenitrici</a>
+                <a href="alumni-mondo.html">Alumni nel mondo</a>
+                <a href="top-alumni.html">Top Alumni</a>
+            </div>
+        </div>
+
+        <a href="gallery.html">Gallery</a>
         <a href="#dona-ora">Dona ora</a>
         <a href="#trasparenza">Trasparenza</a>
-    </div>
 
+    </div>
 </nav>
+
 <header class="hero">
     <div class="hero-content">
         <img src="logo.png" alt="Logo Alumni SUISS" class="hero-logo">
-        
         <h1>ASSOCIAZIONE</h1>
         <h2>ALUMNI SUISS</h2>
         <a href="#chi-siamo" class="learn-button">Scopri di più</a>
     </div>
 </header>
+
+<section id="in-evidenza" class="featured-section">
+    <h2>In evidenza</h2>
+
+    <div class="featured-grid">
+
+        <div class="featured-box">
+            <h3>Ultime news</h3>
+            <div class="scroll-box">
+                <p><strong>Prossimamente</strong><br>Pubblicazione delle prime comunicazioni ufficiali dell’Associazione.</p>
+                <p><strong>Statuto</strong><br>Disponibile il documento statutario nella sezione Amministrazione trasparente.</p>
+                <p><strong>Portale iscrizioni</strong><br>Attivazione della procedura online per la richiesta di ammissione.</p>
+            </div>
+        </div>
+
+        <div class="featured-box">
+            <h3>Attività recenti</h3>
+            <div class="scroll-box">
+                <p><strong>Community Alumni</strong><br>Avvio della costruzione della rete Alumni SUISS.</p>
+                <p><strong>Gallery</strong><br>In preparazione le raccolte fotografiche degli eventi associativi.</p>
+                <p><strong>Networking</strong><br>Costruzione progressiva della rete professionale Alumni.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
 
 <section id="chi-siamo">
     <h2>Chi siamo</h2>
@@ -607,13 +743,12 @@ footer {
             e favorisce lo scambio di conoscenze e competenze a livello nazionale e internazionale.
         </p>
     </div>
+
     <div class="photo-carousel">
-    <button class="carousel-btn prev" onclick="changeSlide(-1)">‹</button>
-
-    <img id="carouselImage" src="galleria-1.jpg" alt="Galleria Associazione Alumni SUISS">
-
-    <button class="carousel-btn next" onclick="changeSlide(1)">›</button>
-</div>
+        <button class="carousel-btn prev" onclick="changeSlide(-1)">‹</button>
+        <img id="carouselImage" src="galleria-1.jpg" alt="Galleria Associazione Alumni SUISS">
+        <button class="carousel-btn next" onclick="changeSlide(1)">›</button>
+    </div>
 </section>
 
 <section id="news-eventi">
@@ -642,13 +777,24 @@ footer {
             culturale e istituzionale dei suoi membri.
         </p>
 
-        <a href="direttivo.html" class="primary-button">
-            Consiglio Direttivo
-        </a>
+        <a href="direttivo.html" class="primary-button">Consiglio Direttivo</a>
+        <a href="soci.html" class="primary-button">Ricerca soci</a>
+        <a href="sostenitori.html" class="primary-button">Sostenitori e sostenitrici</a>
+        <a href="alumni-mondo.html" class="primary-button">Alumni nel mondo</a>
+        <a href="top-alumni.html" class="primary-button">Top Alumni</a>
+    </div>
+</section>
 
-        <a href="soci.html" class="primary-button">
-            Ricerca soci
-        </a>
+<section id="gallery-preview">
+    <h2>Gallery</h2>
+
+    <div class="card">
+        <p>
+            Esplora le raccolte fotografiche degli eventi, degli incontri e delle iniziative
+            promosse dall’Associazione Alumni SUISS.
+        </p>
+
+        <a href="gallery.html" class="primary-button">Vai alla Gallery</a>
     </div>
 </section>
 
@@ -667,9 +813,7 @@ footer {
         </p>
     </div>
 
-    <a href="ammissione.html" class="primary-button">
-        Accedi al portale iscrizioni
-    </a>
+    <a href="ammissione.html" class="primary-button">Accedi al portale iscrizioni</a>
 </section>
 
 <section id="dona-ora" class="donate-section">
@@ -694,34 +838,16 @@ footer {
     </div>
 
     <div class="contact-box">
-    <h3>Get Social</h3>
-    <p>Seguici sui nostri canali social ufficiali.</p>
+        <h3>Get Social</h3>
+        <p>Seguici sui nostri canali social ufficiali.</p>
 
-    <div class="social-icons">
-    <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6-1a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-        </svg>
-    </a>
-
-    <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M4 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0 5h4v13H4V8zm7 0h4v2h.1c.6-1.1 2-2.3 4.1-2.3 4.4 0 5.2 2.9 5.2 6.6V21h-4v-6.3c0-1.5 0-3.5-2.2-3.5s-2.5 1.7-2.5 3.4V21h-4V8z"/>
-        </svg>
-    </a>
-
-    <a href="https://x.com/" target="_blank" aria-label="X">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18.9 2H22l-7.5 8.6L23 22h-6.8l-5.3-7-6.1 7H2l8-9.2L1 2h6.8l4.8 6.4L18.9 2z"/>
-        </svg>
-    </a>
-
-    <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M13 3h4V0h-4c-3.3 0-6 2.7-6 6v3H4v4h3v11h4V13h3l1-4h-4V6c0-1.1.9-2 2-2z"/>
-        </svg>
-    </a>
-</div>
+        <div class="social-icons">
+            <a href="https://instagram.com/" target="_blank" aria-label="Instagram">◎</a>
+            <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">in</a>
+            <a href="https://x.com/" target="_blank" aria-label="X">𝕏</a>
+            <a href="https://facebook.com/" target="_blank" aria-label="Facebook">f</a>
+        </div>
+    </div>
 </section>
 
 <section id="trasparenza" class="transparency-section">
@@ -735,9 +861,13 @@ footer {
         <div class="doc-card">
             <h3>Statuto</h3>
             <p>Statuto ufficiale dell’Associazione Alumni SUISS.</p>
-            <a href="statuto.pdf" target="_blank" class="doc-button">
-                Visualizza documento
-            </a>
+            <a href="statuto.pdf" target="_blank" class="doc-button">Visualizza documento</a>
+        </div>
+
+        <div class="doc-card">
+            <h3>Altri documenti</h3>
+            <p>Area destinata alla pubblicazione di atti, regolamenti e documentazione associativa.</p>
+            <a href="#" class="doc-button">In aggiornamento</a>
         </div>
     </div>
 </section>
@@ -747,24 +877,24 @@ footer {
         <p>© 2026 Associazione Alumni SUISS - Tutti i diritti riservati</p>
 
         <div class="footer-social">
-            <a href="#" target="_blank" aria-label="Instagram">◎</a>
-            <a href="#" target="_blank" aria-label="LinkedIn">in</a>
-            <a href="#" target="_blank" aria-label="X">𝕏</a>
-            <a href="#" target="_blank" aria-label="Facebook">f</a>
+            <a href="https://instagram.com/" target="_blank" aria-label="Instagram">◎</a>
+            <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">in</a>
+            <a href="https://x.com/" target="_blank" aria-label="X">𝕏</a>
+            <a href="https://facebook.com/" target="_blank" aria-label="Facebook">f</a>
         </div>
     </div>
 </footer>
+
 <script>
 const galleryImages = [
-    "galleria-1.png",
-    "galleria-2.png",
-    "galleria-3.png"
+    "galleria-1.jpg",
+    "galleria-2.jpg",
+    "galleria-3.jpg"
 ];
 
 let currentSlide = 0;
 let autoSlideInterval;
 
-/* cambia slide manuale */
 function changeSlide(direction) {
     currentSlide += direction;
 
@@ -780,29 +910,27 @@ function changeSlide(direction) {
     restartAutoSlide();
 }
 
-/* aggiorna immagine */
 function updateImage() {
     document.getElementById("carouselImage").src = galleryImages[currentSlide];
 }
 
-/* autoplay */
 function startAutoSlide() {
     autoSlideInterval = setInterval(() => {
         currentSlide++;
+
         if (currentSlide >= galleryImages.length) {
             currentSlide = 0;
         }
+
         updateImage();
-    }, 4000); // cambia ogni 4 secondi
+    }, 4000);
 }
 
-/* riavvia autoplay dopo click */
 function restartAutoSlide() {
     clearInterval(autoSlideInterval);
     startAutoSlide();
 }
 
-/* avvio automatico al caricamento */
 window.onload = function () {
     startAutoSlide();
 };
